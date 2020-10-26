@@ -281,7 +281,7 @@ export default class Video extends Component {
     const RCTVideoLegacyInstance = this.getViewManagerConfig('RCTVideoLegacy');
 
     if (resizeMode === VideoResizeMode.stretch) {
-      nativeResizeMode = RCTVideLegacyoInstance.Constants.ScaleToFill;
+      nativeResizeMode = RCTVideoLegacyInstance.Constants.ScaleToFill;
     } else if (resizeMode === VideoResizeMode.contain) {
       nativeResizeMode = RCTVideoLegacyInstance.Constants.ScaleAspectFit;
     } else if (resizeMode === VideoResizeMode.cover) {
