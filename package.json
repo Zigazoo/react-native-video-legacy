@@ -1,5 +1,5 @@
 {
-    "name": "react-native-video",
+    "name": "react-native-video-legacy",
     "version": "5.1.0-alpha8",
     "description": "A <Video /> element for react-native",
     "main": "Video.js",
@@ -53,7 +53,6 @@
         "FilterType.js",
         "DRMType.js",
         "TextTrackType.js",
-        "VideoResizeMode.js",
-        "react-native-video.podspec"
+        "VideoResizeMode.js"
     ]
 }
