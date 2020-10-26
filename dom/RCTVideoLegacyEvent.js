@@ -12,7 +12,7 @@ interface RCTEvent {
     arguments(): Array<any>;
   }
 
-export default class RCTVideoEvent implements RCTEvent {
+export default class RCTVideoLegacyEvent implements RCTEvent {
   viewTag: number;
   eventName: string;
   coalescingKey: number;

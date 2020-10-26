@@ -2,16 +2,16 @@
 
 import { RCTViewManager } from "react-native-dom";
 
-import RCTVideo from "./RCTVideo";
+import RCTVideoLegacy from "./RCTVideoLegacy";
 import resizeModes from "./resizeModes";
 
 import type { VideoSource } from "./types";
 
-class RCTVideoManager extends RCTViewManager {
-  static moduleName = "RCTVideoManager";
+class RCTVideoLegacyManager extends RCTViewManager {
+  static moduleName = "RCTVideoLegacyManager";
 
   view() {
-    return new RCTVideo(this.bridge);
+    return new RCTVideoLegacy(this.bridge);
   }
 
   describeProps() {
@@ -43,39 +43,39 @@ class RCTVideoManager extends RCTViewManager {
     // not currently working
   }
 
-  setControls(view: RCTVideo, value: boolean) {
+  setControls(view: RCTVideoLegacy, value: boolean) {
     view.controls = value;
   }
 
-  setId(view: RCTVideo, value: string) {
+  setId(view: RCTVideoLegacy, value: string) {
     view.id = value;
   }
 
-  setMuted(view: RCTVideo, value: boolean) {
+  setMuted(view: RCTVideoLegacy, value: boolean) {
     view.muted = value;
   }
 
-  setPaused(view: RCTVideo, value: boolean) {
+  setPaused(view: RCTVideoLegacy, value: boolean) {
     view.paused = value;
   }
 
-  setRate(view: RCTVideo, value: number) {
+  setRate(view: RCTVideoLegacy, value: number) {
     view.rate = value;
   }
 
-  setRepeat(view: RCTVideo, value: boolean) {
+  setRepeat(view: RCTVideoLegacy, value: boolean) {
     view.repeat = value;
   }
 
-  setResizeMode(view: RCTVideo, value: number) {
+  setResizeMode(view: RCTVideoLegacy, value: number) {
     view.resizeMode = value;
   }
 
-  setSeek(view: RCTVideo, value: number) {
+  setSeek(view: RCTVideoLegacy, value: number) {
     view.seek = value;
   }
 
-  setSource(view: RCTVideo, value: VideoSource) {
+  setSource(view: RCTVideoLegacy, value: VideoSource) {
     view.source = value;
   }
 
@@ -84,4 +84,4 @@ class RCTVideoManager extends RCTViewManager {
   }
 }
 
-export default RCTVideoManager;
+export default RCTVideoLegacyManager;

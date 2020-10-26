@@ -278,16 +278,16 @@ export default class Video extends Component {
     const isAsset = !!(uri && uri.match(/^(assets-library|ipod-library|file|content|ms-appx|ms-appdata):/));
 
     let nativeResizeMode;
-    const RCTVideoInstance = this.getViewManagerConfig('RCTVideo');
+    const RCTVideoLegacyInstance = this.getViewManagerConfig('RCTVideoLegacy');
 
     if (resizeMode === VideoResizeMode.stretch) {
-      nativeResizeMode = RCTVideoInstance.Constants.ScaleToFill;
+      nativeResizeMode = RCTVideLegacyoInstance.Constants.ScaleToFill;
     } else if (resizeMode === VideoResizeMode.contain) {
-      nativeResizeMode = RCTVideoInstance.Constants.ScaleAspectFit;
+      nativeResizeMode = RCTVideoLegacyInstance.Constants.ScaleAspectFit;
     } else if (resizeMode === VideoResizeMode.cover) {
-      nativeResizeMode = RCTVideoInstance.Constants.ScaleAspectFill;
+      nativeResizeMode = RCTVideoLegacyInstance.Constants.ScaleAspectFill;
     } else {
-      nativeResizeMode = RCTVideoInstance.Constants.ScaleNone;
+      nativeResizeMode = RCTVideoLegacyInstance.Constants.ScaleNone;
     }
 
     const nativeProps = Object.assign({}, this.props);
@@ -337,7 +337,7 @@ export default class Video extends Component {
 
     return (
       <View style={nativeProps.style}>
-        <RCTVideo
+        <RCTVideoLegacy
           ref={this._assignRoot}
           {...nativeProps}
           style={StyleSheet.absoluteFill}
@@ -509,7 +509,7 @@ Video.propTypes = {
   ...ViewPropTypes,
 };
 
-const RCTVideo = requireNativeComponent('RCTVideo', Video, {
+const RCTVideoLegacy = requireNativeComponent('RCTVideoLegacy', Video, {
   nativeOnly: {
     src: true,
     seek: true,
